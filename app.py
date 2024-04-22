@@ -4,7 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/webbackend/calculate', methods=['POST'])
+@app.route('/calculate', methods=['POST'])
 def calculate():
     num1 = request.get_json()['num1']
     num2 = request.get_json()['num2']
