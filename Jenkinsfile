@@ -25,7 +25,15 @@ pipeline {
                 // sh 'sudo docker rm $imagename'
                 // sh 'sudo docker rmi $imagename'
                 sh 'sudo docker image build -t  $imagename .'
-                sh 'sudo docker run -p82:5000 --restart=always --name $imagename  -itd $imagename'
+
+            }
+
+        }
+        
+        stage('Run image ') {
+
+            steps{
+                sh 'sudo docker run -p5000:5000 --restart=always --name $imagename  -itd $imagename'
 
             }
 
